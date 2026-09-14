@@ -1,0 +1,16 @@
+# Secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ADK local session state
+.adk/
+
+# OS / editor
+.DS_Store
+.vscode/
