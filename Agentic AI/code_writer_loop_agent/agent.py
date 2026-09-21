@@ -6,8 +6,8 @@ from google.adk.agents.callback_context import CallbackContext
 GEMINI_MODEL = "gemini-3.5-flash"
 
 # --- State Keys ---
-STATE_CURRENT_CODE = "current_code"
-STATE_CRITICISM = "criticism"
+# STATE_CURRENT_CODE = "current_code"
+# STATE_CRITICISM = "criticism"
 # Define the exact phrase the Reviewer should use to signal completion
 COMPLETION_PHRASE = "No major issues found."
 
@@ -45,7 +45,7 @@ initial_writer_agent = LlmAgent(
     Do not add introductions or explanations.
     """,
     description="Writes the initial code implementation based on the requirement.",
-    output_key=STATE_CURRENT_CODE
+    output_key="code"
 )
 
 # STEP 2a: Code Reviewer Agent (Inside the Refinement Loop)
@@ -58,7 +58,7 @@ critic_agent_in_loop = LlmAgent(
 
     **Code to Review:**
     ```
-    {{current_code}}
+    {{code}}
     ```
 
     **Completion Criteria (ALL must be met):**
@@ -77,7 +77,7 @@ critic_agent_in_loop = LlmAgent(
     {COMPLETION_PHRASE}
     """,
     description="Reviews the current code, providing critique if clear improvements are needed, otherwise signals completion.",
-    output_key=STATE_CRITICISM
+    output_key="review_comment"
 )
 
 # STEP 2b: Refiner/Exiter Agent (Inside the Refinement Loop)
@@ -90,10 +90,10 @@ refiner_agent_in_loop = LlmAgent(
     You are a Python Developer fixing code based on review comments OR exiting the process.
     **Current Code:**
     ```
-    {{current_code}}
+    {{code}}
     ```
     **Review Comments:**
-    {{criticism}}
+    {{review_comment}}
 
     **Task:**
     Analyze the 'Review Comments'.
@@ -107,7 +107,7 @@ refiner_agent_in_loop = LlmAgent(
     """,
     description="Refines the code based on review comments, or calls exit_loop if the review indicates completion.",
     tools=[exit_loop], # Provide the exit_loop tool
-    output_key=STATE_CURRENT_CODE # Overwrites state['current_code'] with the refined version
+    output_key="code" # Overwrites state['current_code'] with the refined version
 )
 
 # STEP 2: Refinement Loop Agent
