@@ -6,3 +6,6 @@ curl "https://generativelanguage.googleapis.com/v1beta/interactions" \
     "model": "gemini-2.5-flash",
     "input": "Explain how AI works in a few words"
   }'
+
+
+gs://tt-artifact-demo-00
