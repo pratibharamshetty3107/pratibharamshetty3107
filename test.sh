@@ -67,7 +67,7 @@ gcloud container clusters create adk-demo \
 
 
 ## GKE deployment
-
+adk deploy gke  --project=gcai-sep-26 --region=asia-south1 --service_type=LoadBalancer --cluster_name=adk-demo --with_ui --service_name="bq-agent" bq_agent
 
 TOKEN=$(gcloud auth print-identity-token)
 #Create session
