@@ -10,26 +10,26 @@ def append_prompt(callback_context: CallbackContext, llm_request: LlmRequest) ->
     agent_name = callback_context.agent_name
     print("********checking LLM request schema********",llm_request)
     #Find the last user message
-    # last_user_message = ""
-    # if llm_request.contents and len(llm_request.contents) > 0:
-    #     for content in reversed(llm_request.contents):
-    #         if content.role == "user" and content.parts and len(content.parts) > 0:
-    #             if hasattr(content.parts[0], "text") and content.parts[0].text:
-    #                 last_user_message = content.parts[0].text
-    #                 break
+    last_user_message = ""
+    if llm_request.contents and len(llm_request.contents) > 0:
+        for content in reversed(llm_request.contents):
+            if content.role == "user" and content.parts and len(content.parts) > 0:
+                if hasattr(content.parts[0], "text") and content.parts[0].text:
+                    last_user_message = content.parts[0].text
+                    break
 
-    # print("=== MODEL REQUEST STARTED ===")
-    # print(f"Agent: {agent_name}")
-    # if last_user_message:
-    #     print(f"User message: {last_user_message[:100]}...")
+    print("=== MODEL REQUEST STARTED ===")
+    print(f"Agent: {agent_name}")
+    if last_user_message:
+        print(f"User message: {last_user_message[:100]}...")
 
-    #     # Prepend instructions to the last user message
-    #     content_part = content.parts[0]
-    #     instruction = "Please respond politely and also only give answer always in bullet points, avoid sending tables \n"
-    #     content_part.text = instruction + content_part.text
-    #     # Log the modified text
-    #     print(f"Modified user message: {content_part.text[:150]}...")
-    #     print("=== MODEL REQUEST COMPLETED ===")
+        # Prepend instructions to the last user message
+        content_part = content.parts[0]
+        instruction = "Please respond politely and also only give answer always in bullet points, avoid sending tables \n"
+        content_part.text = instruction + content_part.text
+        # Log the modified text
+        print(f"Modified user message: {content_part.text[:150]}...")
+        print("=== MODEL REQUEST COMPLETED ===")
 
 
     
