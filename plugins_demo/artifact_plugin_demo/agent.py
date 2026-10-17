@@ -3,6 +3,7 @@ from google.adk.plugins.bigquery_agent_analytics_plugin import BigQueryAgentAnal
 from google.adk.apps import App
 from google.adk.plugins.save_files_as_artifacts_plugin import SaveFilesAsArtifactsPlugin
 from  google.adk.plugins.context_filter_plugin import ContextFilterPlugin
+
 bqplugin = BigQueryAgentAnalyticsPlugin(
     project_id="gcai-sep-26",
     dataset_id="agent_analytics",
