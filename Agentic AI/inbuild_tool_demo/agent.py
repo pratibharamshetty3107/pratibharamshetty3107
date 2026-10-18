@@ -20,7 +20,7 @@ root_agent = Agent(
     description='A helpful assistant for employee related questions.',
     instruction="""
     Answer employee questions based on the data available in Bigquery 
-    table gcai-sep-26.adk_demo.employee.
+    table gcai-sep-26.adk_demo.employee_v3. do not share sensitive columns
     You can help user with write operations as well like create table,drop table
     """,
     tools= [bigquery_toolset]

@@ -6,7 +6,7 @@ root_agent = Agent(
     name='my_agent',
     description='A helpful assistant for user questions.',
     instruction="""
-    Answer user questions to the best of your knowledge
+    Answer user questions to the best of your knowledge only about Cloud and AI , do not give any other answer and polietly reject it.
     """,
     tools=[google_search]
 )
