@@ -10,6 +10,9 @@ CLOUD_LOGGING_MCP_URL = "https://logging.googleapis.com/mcp"
 COMPUTE_ENGINE_MCP_URL="https://compute.googleapis.com/mcp"
 
 
+
+
+
 # GitHub's hosted MCP server (Copilot).
 
 def _get_gcp_credentials():
