@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrapture Search - Powered by Google Cloud AI</title>
+    <meta name="description"
+        content="Experience intelligent search powered by Google Cloud's Gen App Builder with advanced AI capabilities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Widget JavaScript bundle -->
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_GB"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4L4 10L16 16L28 10L16 4Z" fill="url(#gradient1)" />
+                        <path d="M4 16L16 22L28 16" stroke="url(#gradient2)" stroke-width="2" stroke-linecap="round" />
+                        <path d="M4 22L16 28L28 22" stroke="url(#gradient3)" stroke-width="2" stroke-linecap="round" />
+                        <defs>
+                            <linearGradient id="gradient1" x1="4" y1="4" x2="28" y2="16" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#667eea" />
+                                <stop offset="1" stop-color="#764ba2" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="4" y1="16" x2="28" y2="16"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#f093fb" />
+                                <stop offset="1" stop-color="#f5576c" />
+                            </linearGradient>
+                            <linearGradient id="gradient3" x1="4" y1="22" x2="28" y2="22"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4facfe" />
+                                <stop offset="1" stop-color="#00f2fe" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1 class="logo-text">TechTrapture Search</h1>
+            </div>
+            <div class="header-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">AI Powered</span>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="hero-title">
+                Discover Anything,
+                <span class="gradient-text">Instantly</span>
+            </h2>
+            <p class="hero-subtitle">
+                Powered by Google Cloud's advanced AI technology for intelligent, lightning-fast search results
+            </p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <input type="text" placeholder="Search here" id="searchWidgetTrigger" class="search-input"
+                    aria-label="Search input" />
+                <div class="search-shortcut">
+                    <kbd>⌘</kbd><kbd>K</kbd>
+                </div>
+            </div>
+
+            <!-- Search widget element is not visible by default -->
+            <gen-search-widget configId="c1934cbc-8bf8-4583-9d69-fa614dde29c7" triggerId="searchWidgetTrigger">
+            </gen-search-widget>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon feature-icon-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-description">Get instant results with AI-powered search algorithms</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon feature-icon-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Smart Context</h3>
+                <p class="feature-description">Understands your intent for better accuracy</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon feature-icon-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h3 class="feature-title">Cloud Powered</h3>
+                <p class="feature-description">Built on Google Cloud's robust infrastructure</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                Powered by
+                <a href="https://cloud.google.com/generative-ai-app-builder" target="_blank" rel="noopener noreferrer"
+                    class="footer-link">
+                    Google Cloud Gen App Builder
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient bg-gradient-1"></div>
+    <div class="bg-gradient bg-gradient-2"></div>
+    <div class="bg-gradient bg-gradient-3"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
